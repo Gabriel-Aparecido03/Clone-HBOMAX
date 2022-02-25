@@ -1,3 +1,15 @@
+@mixin white-gradient {
+	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+
+$animationSpeed: 40s;
+
+// Animation
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 7))}
+}
+
 * {
     font-family: 'Roboto','sans-serif';
     padding: 0;
@@ -206,7 +218,128 @@
     .price-content {
         display: grid;
         grid-template-columns: auto auto;
+        gap:5%;
+        justify-content: center;
+    }
 
+    .screens-content {
+        display: grid;
+        margin-top: 2rem;
+        height: 100%;
+        border-radius: .5rem;
+        padding: 2rem;
+        background: rgb(255,255,255);
+        background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.411) 90%); 
+        .types {
+            
+            display: flex;
+            justify-content: space-between;
+            
+            .price {
+                
+                display: grid;
+                place-items: end;
+                
+                p {
+                    font-size: 1.8rem;
+                    color: #B535F6;
+                    font-weight: 700;
+                }
+
+                span {
+                    color: #fff;
+                    font-weight: 400;
+                }
+            }
+
+            h1 {
+                font-size: 1.8rem;
+               font-weight: 400;
+            }
+        }
+
+        .types-content {
+            font-size: 1rem;
+            gap: .6rem;
+        }
+
+        .spec {
+            
+            height: 100%;
+            
+            ul {
+                
+                li {
+                    list-style: none;
+                    padding-top: 1rem;
+                    color: #fff;
+                    font-weight: 400;
+                    font-size: 1.3rem;
+                }
+            }
+
+            .button-content {
+                margin-top: 2rem;
+               text-align: center;
+               justify-content: center;
+                button {
+                    width: 80%;
+                    background-color: #B535F6;
+                    border: none;
+                    border-radius: 2rem;
+                    padding: .8rem;
+                    p {
+                        color: #fff;
+                        font-weight: 400;
+                        font-size: .9rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.film-slide {
+    height: 100vh;
+    .tracker {
+        background: white;
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+        height: 100px;
+        margin: auto;
+        overflow:hidden;
+        position: relative;
+        width: 960px;
         
+        &::before,
+        &::after {
+            @include white-gradient;
+            content: "";
+            height: 100px;
+            position: absolute;
+            width: 200px;
+            z-index: 2;
+        }
+    
+        &::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+    
+        &::before {
+            left: 0;
+            top: 0;
+        }
+    
+        .films {
+            animation: scroll $animationSpeed linear infinite;
+            display: flex;
+            width: calc(250px * 14);
+        }
+    
+        .film {
+            height: 100px;
+            width: 250px;
+        }
     }
 }
