@@ -1,11 +1,25 @@
 import React from 'react';
+import { Swiper,SwiperSlide} from 'swiper/react'
+
+
+import "swiper/css"
+import "swiper/css/navigation"
 
 import logo from './assets/images/hbo-max-h-w-l.svg'
 import separator from './assets/images/hero_promo_purpline.png'
 
 import paulistao from './assets/images/paulistao_0.png'
+
 import euphoria from './assets/images/euphoria_996x576_0.jpg'
 import matrix from './assets/images/matrix_996x576-pt_0.png'
+
+import bunker from './assets/images/Bunker_0.png'
+import looney from './assets/images/Looney tunes.png'
+import poosterEuphoria from './assets/images/Euphoria_0(1).png'
+import poosterSuperman from './assets/images/Superman and lois.png'
+import peacemaker from './assets/images/peacemaker_0.png'
+
+
 import jorel from './assets/images/jorel.jpg'
 
 import harryPotter from './assets/images/harrypotterreunion_996x576-pt_0(1).png'
@@ -13,14 +27,12 @@ import bilbardo from './assets/images/bilardo_0.jpg'
 import gildeage from './assets/images/gildedage_996x576_0.webp'
 import superman from './assets/images/peacemaker_996x576-pt_0.webp'
 import ondaboa from './assets/images/ondaboa_996x576_0.webp'
-
-
 import theFallout from './assets/images/the-fallout-bpo.png'
-
 
 import './style/style.scss'
 import {AiOutlineMobile} from 'react-icons/ai'
 import {BsTabletLandscape,BsLaptop,BsTv} from 'react-icons/bs'
+import { Navigation } from 'swiper';
 
 function App() {
   return (
@@ -130,68 +142,178 @@ function App() {
           </div>
         </div>
         <div className="films-slide">
-          <h1>Alerta de spoiler: a HBO Max</h1>
-         <div className="tracker">
-         <div className="films-collections">
-            
-              
-            <div className="film">
-              <img src={paulistao} alt="paulistão no HBO MAX" />
-              <h1>disponível agora</h1>
-            </div>
-          
-          
-            <div className="film">
-              <img src={euphoria} alt="euphoria no HBO MAX" />
-              <h1>disponível agora</h1>
-            </div>
-          
-          
-            <div className="film">
-              <img src={harryPotter} alt="Harry Potter no HBO MAX" />
-              <h1>disponível agora</h1>
-            </div>
-          
-          
-            <div className="film">
-              <img src={ondaboa} alt="onda boa no HBO MAX" />
-              <h1>disponível agora</h1>
-            </div>
-          
-        
-        
-            <div className="film">
-              <img src={bilbardo} alt="bilbardo no HBO MAX" />
-              <h1>17 de feveiro</h1>
-            </div>
-          
-          
-            <div className="film">
-              <img src={jorel} alt="Irmão do Jorel no HBO MAX" />
-              <h1>25 feveiro</h1>
-            </div>
-          
-          
-            <div className="film">
-              <img src={superman} alt="superman no HBO MAX" />
-              <h1>disponível agora</h1>
-            </div>
-          
-          
-            <div className="film">
-              <img src={matrix} alt="matrix no HBO MAX" />
-              <h1>disponível agora</h1>
-            </div>
-          
-          
-            <div className="film">
-              <img src={gildeage} alt="gilddeage no HBO MAX" />
-              <h1>disponível agora</h1>
-            </div>
-          
-      </div>
+          <h1>Alerta de spoiler: a HBO Max tem novidade para você</h1>
+         <div className="slider">
+           <div className="slide-track">
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={harryPotter} alt="imagem do filme harry potter." />
+               </div>
+                <div className="text-content">
+                  <p>Disponível agora</p>
+                </div>
+             </div>
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={bilbardo} alt="imagem do filme bilbardo." />
+               </div>
+                <div className="text-content">
+                  <p>Disponível agora</p>
+                </div>
+             </div>
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={gildeage} alt="imagem do filme gildeage." />
+               </div>
+                <div className="text-content">
+                  <p>Disponível agora</p>
+                </div>
+             </div>
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={superman} alt="imagem do filme superman." />
+               </div>
+                <div className="text-content">
+                  <p>20 março</p>
+                </div>
+             </div>
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={ondaboa} alt="imagem do filme onda boa." />
+               </div>
+                <div className="text-content">
+                  <p>17 de março</p>
+                </div>
+             </div>
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={theFallout} alt="imagem do filme the fallout." />
+               </div>
+                <div className="text-content">
+                  <p>1 de março</p>
+                </div>
+             </div>
+              <div className="slide">
+               <div className="image-content">
+                 <img src={harryPotter} alt="imagem do filme harry potter." />
+               </div>
+                <div className="text-content">
+                  <p>Disponível agora</p>
+                </div>
+             </div>
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={bilbardo} alt="imagem do filme bilbardo." />
+               </div>
+                <div className="text-content">
+                  <p>Disponível agora</p>
+                </div>
+             </div>
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={gildeage} alt="imagem do filme gildeage." />
+               </div>
+                <div className="text-content">
+                  <p>Disponível agora</p>
+                </div>
+             </div>
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={superman} alt="imagem do filme superman." />
+               </div>
+                <div className="text-content">
+                  <p>20 março</p>
+                </div>
+             </div>
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={ondaboa} alt="imagem do filme onda boa." />
+               </div>
+                <div className="text-content">
+                  <p>17 de março</p>
+                </div>
+             </div>
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={theFallout} alt="imagem do filme the fallout." />
+               </div>
+                <div className="text-content">
+                  <p>1 de março</p>
+                </div>
+             </div>
+             <div className="slide">
+               <div className="image-content">
+                 <img src={harryPotter} alt="imagem do filme harry potter." />
+               </div>
+                <div className="text-content">
+                  <p>Disponível agora</p>
+                </div>
+             </div>
+
+             <div className="slide">
+               <div className="image-content">
+                 <img src={bilbardo} alt="imagem do filme bilbardo." />
+               </div>
+                <div className="text-content">
+                  <p>Disponível agora</p>
+                </div>
+             </div>          
+           </div>
+
          </div>
         </div>
+        <div className="poster-films">
+          <h1>Episódios grátis da HBO Max,sem precisar de uma assinatura</h1>
+          <Swiper className='film-carrousel' navigation={true} modules={[Navigation]} slidesPerView={4}>
+            <SwiperSlide className="film-slide">
+              <div className="text-content">
+                <h1>Euphoria</h1>
+                <p>Assistir grátis</p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="film-slide">
+              <div className="text-content">
+                <h1>Bunker</h1>
+                <p>Assistir grátis</p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="film-slide">
+              <div className="text-content">
+                <h1>Superman and Lois</h1>
+                <p>Assistir grátis</p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="film-slide">
+            
+              <div className="text-content">
+                <h1>Looney Tunes</h1>
+                <p>Assister grátis</p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="film-slide">
+            
+              <div className="text-content">
+                <h1>Peace Maker</h1>
+                <p>Assister grátis</p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+          <div className="button-content">
+            <button><p>Explorar mais</p></button>
+          </div>
+        </div>
+
       </div>
       
   );

@@ -1,13 +1,10 @@
-@mixin white-gradient {
-	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-}
 
-$animationSpeed: 40s;
+$animationSpeed: 5s;
 
 // Animation
 @keyframes scroll {
 	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 7))}
+	100% { transform: translateX(calc(-12rem * 6))}
 }
 
 * {
@@ -299,47 +296,110 @@ $animationSpeed: 40s;
     }
 }
 
-.film-slide {
-    height: 100vh;
-    .tracker {
-        background: white;
-        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-        height: 100px;
-        margin: auto;
-        overflow:hidden;
-        position: relative;
-        width: 960px;
-        
-        &::before,
-        &::after {
-            @include white-gradient;
-            content: "";
-            height: 100px;
-            position: absolute;
-            width: 200px;
-            z-index: 2;
-        }
+.films-slide {
+    background-image: url('../assets/images/glow.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    background-color: #030328;
+
+    h1 {
+        color: #fff;
+        text-align: center;
+        font-size: 1.85rem;
+        font-weight: 400;
+        padding-top: 2%;
+        letter-spacing: .5px;
+    }
+
     
-        &::after {
-            right: 0;
-            top: 0;
-            transform: rotateZ(180deg);
+
+    .slide-track {
+        display: flex;
+        animation: scroll 30s linear infinite;
+        gap: 1rem;
+    }
+
+    .slider {
+        overflow: hidden;
+    }
+
+
+    .slide {
+        margin-top: 2%;
+        .image-content {
+            width: 11rem;
+            img {
+                width: 95%;
+                border: 2px solid #B535F6;
+                border-radius: .5rem;
+            }
         }
-    
-        &::before {
-            left: 0;
-            top: 0;
-        }
-    
-        .films {
-            animation: scroll $animationSpeed linear infinite;
-            display: flex;
-            width: calc(250px * 14);
-        }
-    
-        .film {
-            height: 100px;
-            width: 250px;
+
+        .text-content {
+            font-weight: 600;
+            color: #969696;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: .62rem;
+            letter-spacing: .15rem;
+
+            margin-top: .7rem;
         }
     }
+}
+
+.poster-films {
+    background-color: #030328;
+    h1 {
+        padding-top: 10%;
+        font-size: 1.85rem;
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: .06rem;
+        color: #fff;
+        margin-bottom: 5%;
+    }
+}
+
+.film-carrousel {
+    margin-inline: auto;
+    width: 80%;
+}
+
+.film-slide {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-radius: .5rem;
+    height: 45vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    .text-content {
+        text-align: center;
+        margin-bottom: 5%;
+    }
+}
+
+.film-slide:nth-child(1) {
+    background-image: url('../assets/images/Euphoria_0\(1\).png');
+}
+
+.film-slide:nth-child(2) {
+    background-image: url('../assets/images/Bunker_0.png');
+}
+
+.film-slide:nth-child(3){
+    background-image: url('../assets/images/Superman\ and\ lois.png');
+}
+
+.film-slide:nth-child(4) {
+    background-image: url('../assets/images/Looney\ tunes.png');
+}
+
+.film-slide:nth-child(5) {
+    background-image: url('../assets/images/peacemaker_0.png');
 }
